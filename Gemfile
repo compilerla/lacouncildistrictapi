@@ -35,6 +35,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rgeo'
 gem 'pg'
 gem 'activerecord-postgis-adapter'
+gem 'rgeo-shapefile'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
