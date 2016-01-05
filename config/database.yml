@@ -18,6 +18,7 @@ test: &test
   timeout: 5000
 
 production:
+  url: <%= ENV['DATABASE_URL'].sub(/^postgres/, "postgis") %>
   adapter: postgis
   encoding: utf8
   pool: 5
