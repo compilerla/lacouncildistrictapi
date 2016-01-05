@@ -1,0 +1,13 @@
+<script>
+  $(document).ready(function(){
+    L.mapbox.accessToken = 'pk.eyJ1IjoiY29yd2luc3RlcGhlbiIsImEiOiJkUmYyVlYwIn0.W1x76fJSmLH8Lo34sVCSgw';
+
+    var map = L.mapbox.map('map', 'mapbox.streets')
+    .setView([34.05, -118.24],11);
+
+    var geojson = <%= CouncilDistrict.to_geojson.html_safe %>;
+    window.featureLayer = L.mapbox.featureLayer(geojson).addTo(map);
+  });
+</script>
+
+<div id="map"></div>

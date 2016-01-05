@@ -8,14 +8,14 @@
 
 require 'rgeo/shapefile'
 
-path = 'db/shapes/CnclDist_July2012.shp'
+path = 'db/shapes/geo_export_f9a1d340-d921-4cd5-b716-71441f4e58ed.shp'
 RGeo::Shapefile::Reader.open(path) do |file|
   puts "File contains #{file.num_records} records."
   file.each do |record|
-    CouncilDistrict.find_or_create_by(district_number: record.attributes['DISTRICT'], shape: record.geometry)
-    puts "Record number #{record.index}:"
-    puts "  Geometry: #{record.geometry.as_text}"
-    puts "  Attributes: #{record.attributes.inspect}"
+    CouncilDistrict.find_or_create_by(district_number: record.attributes['district'], shape: record.geometry)
+    # puts "Record number #{record.index}:"
+    # puts "  Geometry: #{record.geometry.as_text}"
+    # puts "  Attributes: #{record.attributes.inspect}"
   end
   file.rewind
   record = file.next

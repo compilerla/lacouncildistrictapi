@@ -36,6 +36,9 @@ gem 'rgeo'
 gem 'pg'
 gem 'activerecord-postgis-adapter'
 gem 'rgeo-shapefile'
+gem 'rgeo-geojson'
+gem 'merc_convert'
+gem 'geoutm'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
