@@ -11,3 +11,15 @@
 </script>
 
 <div id="map"></div>
+
+<div id="search">
+  <form action="" method="get">
+    <input type="text" name="address" placeholder="Enter an address" />
+  </form>
+
+  <% if @district.present? %>
+    District: <%= @district.district_number %>
+  <% elsif !params['address'].nil? %>
+    Address not found within Los Angeles City
+  <% end %>
+</div>
